@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9ED590A9-79D9-47A9-B47B-0DC3A4EE60C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pharmachy</RootNamespace>
+    <AssemblyName>Pharmachy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DosageBLL.cs" />
+    <Compile Include="DosageDAL.cs" />
+    <Compile Include="DosageInfo.cs" />
+    <Compile Include="From\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\FrmDosage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmDosage.Designer.cs">
+      <DependentUpon>FrmDosage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\FrmMedicineGrp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmMedicineGrp.Designer.cs">
+      <DependentUpon>FrmMedicineGrp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\FrmMedicineInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmMedicineInfo.Designer.cs">
+      <DependentUpon>FrmMedicineInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\FrmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmUnit.Designer.cs">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineDAL.cs" />
+    <Compile Include="MedicinegrpInfo.cs" />
+    <Compile Include="MedicinegrpInfoBLL.cs" />
+    <Compile Include="MedicinegrpInfoDAL.cs" />
+    <Compile Include="MedicineInfo.cs" />
+    <Compile Include="MedicineInfoBLL.cs" />
+    <Compile Include="From\Pharmacuticles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Pharmacuticles.Designer.cs">
+      <DependentUpon>Pharmacuticles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PharmacuticlesBLL.cs" />
+    <Compile Include="PharmacuticlesDAL.cs" />
+    <Compile Include="PharmacuticlesInfo.cs" />
+    <Compile Include="From\PharmaMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\PharmaMDI.Designer.cs">
+      <DependentUpon>PharmaMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseBLL.cs" />
+    <Compile Include="PurchaseDLL.cs" />
+    <Compile Include="PurchaseInfo.cs" />
+    <Compile Include="UnitInfo.cs" />
+    <Compile Include="UnitInfoBLL.cs" />
+    <Compile Include="UnitInfoDAL.cs" />
+    <EmbeddedResource Include="From\FrmDosage.resx">
+      <DependentUpon>FrmDosage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmMedicineGrp.resx">
+      <DependentUpon>FrmMedicineGrp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmMedicineInfo.resx">
+      <DependentUpon>FrmMedicineInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmUnit.resx">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\Pharmacuticles.resx">
+      <DependentUpon>Pharmacuticles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\PharmaMDI.resx">
+      <DependentUpon>PharmaMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pharma.BLL\Pharma.BLL.csproj">
+      <Project>{0a52dc73-2374-4c84-a276-07a22efdf218}</Project>
+      <Name>Pharma.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pharma.Utility\Pharma.Utility.csproj">
+      <Project>{aacae146-c918-4d15-98ba-7bfa1ede4bf5}</Project>
+      <Name>Pharma.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
