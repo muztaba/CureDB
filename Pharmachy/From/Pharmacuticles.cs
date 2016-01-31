@@ -44,10 +44,6 @@ namespace Pharmachy
             bllObj.SavePharmacuticles(obj);
             this.LoadPharmacuticles();
             MessageBox.Show("Data successfully Saved!");
-            
-
-
-
         }
 
         private void FrmPharmacuticles_Load(object sender, EventArgs e)

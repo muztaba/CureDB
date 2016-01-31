@@ -26,6 +26,7 @@ namespace Pharmachy
         {
             InitializeComponent();
             this.LoadMedicine();
+            this.loadMasterData();
         }
 
         private void FrmMedicineInfo_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Pharmachy
 
         private void loadMasterData()
         {
-            Qry = "select DosageID, DosageName from DosageInfo";
+            Qry = "select DosageID, DosageName from DosageForm";
             dtInfo = DbUtility.GetDataTable(Qry);
             cmbDosage.DataSource = dtInfo;
             cmbDosage.DisplayMember = "DosageName";
