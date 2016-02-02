@@ -17,6 +17,7 @@ namespace Pharmachy
         {
             InitializeComponent();
             FillDataGridView();
+            FillComboBox();
         }
 
         private void FillDataGridView()
@@ -34,6 +35,20 @@ namespace Pharmachy
             DataTable table = DbUtility.GetDataTable(query);
             return table;
         }
+
+        private void FillComboBox()
+        {
+            DataTable table = new PharmacuticlesInfoBLL().LoadPharcuticalsTable();
+            cmbSupplierId.DataSource = table;
+            cmbSupplierId.DisplayMember = "PharmaName";
+            cmbSupplierId.ValueMember = "PharmaID";
+
+            table = new MedicineInfoBLL().LoadMedicineInfoTable();
+            cmbMedicineID.DataSource = table;
+            cmbMedicineID.DisplayMember = "MedicineName";
+            cmbMedicineID.ValueMember = "MedicineID";
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -152,6 +167,7 @@ namespace Pharmachy
             purchaseInfo.SupplierId = dgvPurchaseInfo[3, row].Value.ToString();
             purchaseInfo.Quantity = Convert.ToInt32(dgvPurchaseInfo[4, row].Value);
             purchaseInfo.Price = Convert.ToInt32(dgvPurchaseInfo[6, row].Value);
+            purchaseInfo.MedicineId = dgvPurchaseInfo[14, row].Value.ToString();
 
             FillTxtField(purchaseInfo);
 
@@ -160,7 +176,8 @@ namespace Pharmachy
         private void GetTxtFieldData(PurchaseInfo purchaseInfo)
         {
             purchaseInfo.PurchaseId = txtID.Text;
-            purchaseInfo.SupplierId = txtSupplierId.Text;
+            purchaseInfo.SupplierId = cmbSupplierId.SelectedValue.ToString();
+            purchaseInfo.MedicineId = cmbMedicineID.SelectedValue.ToString();
             purchaseInfo.Price = Convert.ToDecimal(txtPrice.Text);
             purchaseInfo.Quantity = Convert.ToInt32(txtPurchaseQty.Text);
         }
@@ -168,7 +185,10 @@ namespace Pharmachy
         private void FillTxtField(PurchaseInfo purchaseInfo)
         {
             txtID.Text = purchaseInfo.PurchaseId;
-            txtSupplierId.Text = purchaseInfo.SupplierId;
+            String pharmaName = new PharmacuticlesDAL().GetPharmaName(purchaseInfo.SupplierId);
+            String medicineName = new MedicineDAL().GetMedicineName(purchaseInfo.MedicineId);
+            cmbSupplierId.SelectedIndex = cmbSupplierId.FindStringExact(pharmaName);
+            cmbMedicineID.SelectedIndex = cmbMedicineID.FindStringExact(medicineName);
             txtPurchaseQty.Text = purchaseInfo.Quantity.ToString();
             txtPrice.Text = purchaseInfo.Price.ToString();
         }
@@ -176,7 +196,7 @@ namespace Pharmachy
         private void ClearTxtField()
         {
             txtID.Text = String.Empty;
-            txtSupplierId.Text = String.Empty;
+            cmbSupplierId.SelectedIndex = 0;
             txtPurchaseQty.Text = String.Empty;
             txtPrice.Text = String.Empty;
         }

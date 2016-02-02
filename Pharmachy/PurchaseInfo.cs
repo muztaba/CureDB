@@ -29,6 +29,8 @@ namespace Pharmachy
         public String UpdateBy { get; set; }
         public String UpdateComputer { get; set; }
 
+        public String MedicineId { get; set; }
+
         public String UpdateDate
         {
             get { return _updateDate; }

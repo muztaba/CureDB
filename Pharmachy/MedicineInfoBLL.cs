@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,11 @@ namespace Pharmachy
            dalObj.DeleteMedicine(obj);
        }
 
+       public DataTable LoadMedicineInfoTable()
+       {
+           dalObj = new MedicineDAL();
+           return dalObj.LoadMedicineInfoTable();
+       }
 
     }
 }

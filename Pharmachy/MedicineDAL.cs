@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,21 @@ namespace Pharmachy
            DbUtility.ExecuteQuery(Qry);
        }
 
+       public DataTable LoadMedicineInfoTable()
+       {
+           const String query = "SELECT * FROM MedicineInfo";
+           return DbUtility.GetDataTable(query);
+       }
 
+       public String GetMedicineName(String MedicineId)
+       {
+           object obj = DbUtility.GetColValue("MedicineInfo", "MedicineName", "MedicineID", MedicineId);
 
+           if (obj != "" || obj != null)
+           {
+               return (string) obj;
+           }
+           return String.Empty;
+       }
     }
 }

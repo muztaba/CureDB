@@ -38,14 +38,16 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtPurchaseQty = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtSupplierId = new System.Windows.Forms.TextBox();
             this.dgvPurchaseInfo = new System.Windows.Forms.DataGridView();
+            this.cmbSupplierId = new System.Windows.Forms.ComboBox();
+            this.cmbMedicineID = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(480, 110);
+            this.btndelete.Location = new System.Drawing.Point(638, 116);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(75, 23);
             this.btndelete.TabIndex = 24;
@@ -55,7 +57,7 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.Location = new System.Drawing.Point(377, 110);
+            this.btnupdate.Location = new System.Drawing.Point(535, 116);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(75, 23);
             this.btnupdate.TabIndex = 23;
@@ -65,7 +67,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(269, 110);
+            this.btnSave.Location = new System.Drawing.Point(427, 116);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 22;
@@ -140,40 +142,59 @@
             this.txtID.TabIndex = 13;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
-            // txtSupplierId
-            // 
-            this.txtSupplierId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSupplierId.Location = new System.Drawing.Point(452, 33);
-            this.txtSupplierId.Name = "txtSupplierId";
-            this.txtSupplierId.Size = new System.Drawing.Size(215, 20);
-            this.txtSupplierId.TabIndex = 11;
-            this.txtSupplierId.TextChanged += new System.EventHandler(this.txtContains_TextChanged);
-            // 
             // dgvPurchaseInfo
             // 
             this.dgvPurchaseInfo.AllowUserToOrderColumns = true;
             this.dgvPurchaseInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPurchaseInfo.Location = new System.Drawing.Point(29, 165);
             this.dgvPurchaseInfo.Name = "dgvPurchaseInfo";
-            this.dgvPurchaseInfo.Size = new System.Drawing.Size(848, 368);
+            this.dgvPurchaseInfo.Size = new System.Drawing.Size(1038, 393);
             this.dgvPurchaseInfo.TabIndex = 25;
             this.dgvPurchaseInfo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDoubleClick);
+            // 
+            // cmbSupplierId
+            // 
+            this.cmbSupplierId.FormattingEnabled = true;
+            this.cmbSupplierId.Location = new System.Drawing.Point(452, 35);
+            this.cmbSupplierId.Name = "cmbSupplierId";
+            this.cmbSupplierId.Size = new System.Drawing.Size(215, 21);
+            this.cmbSupplierId.TabIndex = 26;
+            // 
+            // cmbMedicineID
+            // 
+            this.cmbMedicineID.FormattingEnabled = true;
+            this.cmbMedicineID.Location = new System.Drawing.Point(765, 35);
+            this.cmbMedicineID.Name = "cmbMedicineID";
+            this.cmbMedicineID.Size = new System.Drawing.Size(215, 21);
+            this.cmbMedicineID.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(693, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "MedicineID";
+            this.label4.Click += new System.EventHandler(this.label3_Click);
             // 
             // FrmPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 580);
+            this.ClientSize = new System.Drawing.Size(1079, 580);
+            this.Controls.Add(this.cmbMedicineID);
+            this.Controls.Add(this.cmbSupplierId);
             this.Controls.Add(this.dgvPurchaseInfo);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtSupplierId);
             this.Controls.Add(this.txtPurchaseQty);
             this.Controls.Add(this.txtID);
             this.Name = "FrmPurchase";
@@ -196,7 +217,9 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtPurchaseQty;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtSupplierId;
         private System.Windows.Forms.DataGridView dgvPurchaseInfo;
+        private System.Windows.Forms.ComboBox cmbSupplierId;
+        private System.Windows.Forms.ComboBox cmbMedicineID;
+        private System.Windows.Forms.Label label4;
     }
 }
