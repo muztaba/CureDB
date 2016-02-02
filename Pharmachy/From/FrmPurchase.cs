@@ -18,6 +18,10 @@ namespace Pharmachy
             InitializeComponent();
             FillDataGridView();
             FillComboBox();
+            cmbSupplierId.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbSupplierId.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbMedicineID.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbMedicineID.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void FillDataGridView()
