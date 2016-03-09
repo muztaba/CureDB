@@ -59,6 +59,12 @@
     <Compile Include="From\FrmDosage.Designer.cs">
       <DependentUpon>FrmDosage.cs</DependentUpon>
     </Compile>
+    <Compile Include="From\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\FrmMedicineGrp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,8 @@
     <Compile Include="From\FrmUnit.Designer.cs">
       <DependentUpon>FrmUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IUserServiceDAL.cs" />
     <Compile Include="MedicineDAL.cs" />
     <Compile Include="MedicinegrpInfo.cs" />
     <Compile Include="MedicinegrpInfoBLL.cs" />
@@ -112,8 +120,14 @@
     <Compile Include="UnitInfo.cs" />
     <Compile Include="UnitInfoBLL.cs" />
     <Compile Include="UnitInfoDAL.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="UserServiceDAL.cs" />
     <EmbeddedResource Include="From\FrmDosage.resx">
       <DependentUpon>FrmDosage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\FrmMedicineGrp.resx">
       <DependentUpon>FrmMedicineGrp.cs</DependentUpon>
