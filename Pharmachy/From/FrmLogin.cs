@@ -35,13 +35,14 @@ namespace Pharmachy.From
 
             if (isValidUser)
             {
-                AuthinticationSuccess();
+                AuthinticationSuccess(user);
             }
 
         }
 
-        private void AuthinticationSuccess()
+        private void AuthinticationSuccess(User user)
         {
+            userService.SaveCurrentUser();
             PharmaMDI pharmaMdi = new PharmaMDI();
             pharmaMdi.Show();
             this.Hide();

@@ -9,5 +9,9 @@ namespace Pharmachy
     interface IUserService
     {
         bool checkUserAuthentication(User user);
+
+        bool SaveCurrentUser();
+
+        User GetCurrentMachineUser();
     }
 }
